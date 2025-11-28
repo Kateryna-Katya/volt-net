@@ -159,45 +159,56 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
 
-  // ==============================================
-  // 8. TERMINAL FORM (CONTACT)
-  // ==============================================
-  const termForm = document.getElementById('leadForm'); // Используем ID из HTML
-  const msgBox = document.getElementById('form-message');
+  // =================================================================
+    // 6. ТЕРМИНАЛ КОНТАКТОВ (ЛОГИКА + КАПЧА)
+    // =================================================================
+    
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const captchaQuestion = document.getElementById('captcha-question');
+    const captchaInput = document.getElementById('captcha-input');
+    const submitBtn = document.querySelector('.terminal-submit');
 
-  if (termForm) {
-      termForm.addEventListener('submit', (e) => {
-          e.preventDefault();
+    if (contactForm && captchaQuestion && captchaInput) {
+        // 1. Генерируем задачу: (A + B)
+        const num1 = Math.floor(Math.random() * 10) + 1;
+        const num2 = Math.floor(Math.random() * 10) + 1;
+        captchaQuestion.textContent = `${num1} + ${num2}`;
+        const correctAnswer = num1 + num2;
 
-          const btn = termForm.querySelector('.term-btn');
-          const originalText = btn.innerHTML; // Сохраняем текст "[ EXECUTE ]"
+        // 2. Обработка отправки
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-          // 1. Processing state
-          btn.innerHTML = "[ PROCESSING... ]";
-          btn.style.opacity = "0.7";
-          btn.disabled = true;
+            // Проверка ответа
+            if (parseInt(captchaInput.value) !== correctAnswer) {
+                alert("ACCESS DENIED: Неверное решение примера.");
+                captchaInput.value = '';
+                captchaInput.focus();
+                captchaInput.style.borderBottom = "1px solid red";
+                return;
+            }
 
-          // 2. Simulate Delay
-          setTimeout(() => {
-              // Success state
-              btn.innerHTML = "[ ACCESS GRANTED ]";
-              btn.style.background = "#CCFF00"; // Цвет лайма
-              btn.style.color = "#000";
-              btn.style.borderColor = "#CCFF00";
+            // Имитация отправки (Loading)
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '[ SENDING... ]';
+            submitBtn.style.opacity = '0.7';
 
-              termForm.reset(); // Очистить поля
+            setTimeout(() => {
+                // Прячем форму, показываем терминальное сообщение
+                contactForm.style.display = 'none';
+                successMessage.classList.add('visible');
+                
+                // Сохраняем факт отправки (опционально)
+                localStorage.setItem('formSubmitted', 'true');
+            }, 1500);
+        });
 
-              // 3. Reset to default
-              setTimeout(() => {
-                  btn.innerHTML = originalText;
-                  btn.style.background = "transparent";
-                  btn.style.color = "#CCFF00"; // Вернуть цвет текста
-                  btn.style.opacity = "1";
-                  btn.disabled = false;
-              }, 3000);
-          }, 1500);
-      });
-  }
+        // Убираем красную рамку при вводе
+        captchaInput.addEventListener('input', () => {
+             captchaInput.style.borderBottom = '1px solid transparent';
+        });
+    }
 // --- ROADMAP REVEAL ---
 const roadmapSteps = document.querySelectorAll('.roadmap-step');
 
@@ -214,7 +225,63 @@ if (roadmapSteps.length > 0) {
         ease: "power2.out"
     });
 }
+// --- FAQ ACCORDION ---
+    const faqItems = document.querySelectorAll('.faq-item');
 
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
 
+        question.addEventListener('click', () => {
+            const isOpen = item.classList.contains('active');
+
+            // 1. Закрываем все остальные (аккордеонный режим)
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-answer').style.maxHeight = null;
+            });
+
+            // 2. Если не был открыт — открываем текущий
+            if (!isOpen) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+// =================================================================
+    // COOKIE POPUP LOGIC
+    // =================================================================
+    
+    const cookiePopup = document.getElementById('cookie-popup');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+
+    // 1. Проверяем, соглашался ли пользователь ранее
+    // Если в localStorage нет записи 'cookieConsent', значит пользователь тут впервые (или очистил кэш)
+    if (cookiePopup && !localStorage.getItem('cookieConsent')) {
+        // Показываем попап с задержкой 2 секунды, чтобы не пугать сразу
+        setTimeout(() => {
+            cookiePopup.classList.add('show');
+        }, 2000);
+    }
+
+    // 2. Логика кнопки "Принять"
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            // Сохраняем в браузере метку, что пользователь согласился
+            localStorage.setItem('cookieConsent', 'true');
+            // Убираем класс .show, чтобы скрыть окно
+            cookiePopup.classList.remove('show');
+        });
+    }
+
+    // 3. Логика кнопки "Закрыть" (Decline)
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+            // Просто скрываем окно для этой сессии
+            // (Можно не сохранять отказ, чтобы спросить снова в следующий раз, или сохранить 'false')
+            cookiePopup.classList.remove('show');
+        });
+    }
 
 });
