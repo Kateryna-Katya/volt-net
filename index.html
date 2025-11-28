@@ -1,56 +1,357 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/test-two/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volt-Net | Карьерная Архитектура</title>
+    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+
+
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" crossorigin src="/test-two/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/test-two/assets/styles-guStct1H.css">
+    <link rel="stylesheet" crossorigin href="/test-two/assets/styles-D41rqnBm.css">
   </head>
-  <body>
+  <body class="page">
+
+    <div class="grid-background"></div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
     <header class="header">
-  <div class="container">
-    <nav class="nav">
-      <a class="nav-logo" href="./index.html" aria-label="Site logo">
-        <svg class="nav-logo-icon" width="100" height="30">
-          <use href="{=$icon-path}"></use>
-        </svg>
-      </a>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-act}" href="./page-2.html">Page 2</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link {=$highlight-curr}" href="./page-3.html">Page 3</a>
-        </li>
-      </ul>
-    </nav>
+  <div class="header__inner">
+
+      <div class="header__col header__logo-area">
+          <a href="/" class="logo">
+              VOLT-NET<span class="dot">.</span>
+          </a>
+      </div>
+
+      <div class="header__col header__nav-area">
+          <nav class="nav">
+              <a href="#about" class="nav__link">МЕТОД</a>
+              <a href="#benefits" class="nav__link">ПРОФИТ</a>
+              <a href="#innovations" class="nav__link">ТЕХНОЛОГИИ</a>
+              <a href="#blog" class="nav__link">ЖУРНАЛ</a>
+          </nav>
+      </div>
+
+      <div class="header__col header__action-area">
+          <a href="#contact" class="btn-text desktop-only">
+              [ НАЧАТЬ АПГРЕЙД ]
+          </a>
+
+          <button class="burger-btn" aria-label="Menu">
+              <span></span>
+              <span></span>
+          </button>
+      </div>
   </div>
 </header>
 
+<div class="mobile-menu">
+  <div class="mobile-menu__bg"></div> <nav class="mobile-nav">
+      <a href="#hero" class="mobile-link">ГЛАВНАЯ <span class="num">01</span></a>
+      <a href="#about" class="mobile-link">МЕТОД <span class="num">02</span></a>
+      <a href="#benefits" class="mobile-link">ПРОФИТ <span class="num">03</span></a>
+      <a href="#innovations" class="mobile-link">ТЕХНОЛОГИИ <span class="num">04</span></a>
+      <a href="#blog" class="mobile-link">ЖУРНАЛ <span class="num">05</span></a>
+      <a href="#contact" class="mobile-link accent">СТАРТ <span class="num">06</span></a>
+  </nav>
 
-    <main>
+  <div class="mobile-menu__footer">
+      <span>VOLT-NET SYSTEM v.1.0</span>
+      <span>EU REGION ONLY</span>
+  </div>
+</div>
+
+    <main class="main">
       <!-- Loads the specified .html file -->
-      
+      <section class="hero" id="hero">
+  <div class="hero__top">
+      <div class="hero__status">
+          <span class="status-dot"></span>
+          SYSTEM: ONLINE IN EU
+      </div>
+      <h1 class="hero__title">
+          <div class="line-mask"><span>СТРОИМ</span></div>
+          <div class="line-mask"><span class="outline-text">КАРЬЕРУ</span></div>
+          <div class="line-mask"><span>НОВОГО</span></div>
+          <div class="line-mask"><span class="accent-text">УРОВНЯ</span></div>
+      </h1>
+  </div>
+
+  <div class="marquee-wrapper">
+      <div class="marquee">
+          <div class="marquee__content">
+              <span>STRATEGY /// GROWTH /// MONEY /// FREEDOM /// VOLT-NET ///</span>
+              <span>STRATEGY /// GROWTH /// MONEY /// FREEDOM /// VOLT-NET ///</span>
+          </div>
+      </div>
+  </div>
+
+  <div class="hero__bottom">
+      <div class="hero__desc-block">
+          <p class="hero__desc">
+              Исключите случайности. Мы внедряем алгоритмический подход к вашему профессиональному росту.
+          </p>
+      </div>
+      <div class="hero__arrow-block">
+          <div class="circle-btn">
+              <i data-lucide="arrow-down"></i>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="about" class="section section-method">
+  <div class="container-fluid">
+      <div class="section-head">
+          <span class="section-num">[ 02 ]</span>
+          <h2 class="section-title">АРХИТЕКТУРА <span class="accent">РОСТА</span></h2>
+      </div>
+
+      <div class="bento-grid">
+          <div class="bento-card card-main">
+              <i data-lucide="cpu" class="bento-icon"></i>
+              <h3>Алгоритмический Подход</h3>
+              <p>Мы исключили человеческий фактор. Система анализирует 50+ параметров вашего профиля и строит кратчайший маршрут к цели.</p>
+              <div class="tech-lines"></div>
+          </div>
+
+          <div class="bento-card card-stat">
+              <span class="big-num">0%</span>
+              <p>СЛУЧАЙНОСТЕЙ</p>
+          </div>
+
+          <div class="bento-card card-accent">
+              <h3>Евро-Стандарт</h3>
+              <p>Методология адаптирована под рынок труда Италии и ЕС.</p>
+              <div class="card-arrow"><i data-lucide="arrow-up-right"></i></div>
+          </div>
+
+          <div class="bento-card card-list">
+              <ul>
+                  <li>[+] АНАЛИЗ НИШИ</li>
+                  <li>[+] СКОРИНГ НАВЫКОВ</li>
+                  <li>[+] АВТО-СТРАТЕГИЯ</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="benefits" class="section section-benefits">
+  <div class="container-fluid">
+      <div class="section-head">
+          <span class="section-num">[ 03 ]</span>
+          <h2 class="section-title">ВАШ <span class="outline">ПРОФИТ</span></h2>
+      </div>
+
+      <div class="benefits-list">
+          <div class="benefit-item">
+              <div class="benefit-header">
+                  <span class="benefit-idx">/01</span>
+                  <h3 class="benefit-title">МАСШТАБИРОВАНИЕ</h3>
+              </div>
+              <div class="benefit-desc">
+                  Стратегия выхода на новый уровень дохода без выгорания.
+              </div>
+              <i data-lucide="trending-up" class="benefit-icon"></i>
+          </div>
+          <div class="benefit-item">
+              <div class="benefit-header">
+                  <span class="benefit-idx">/02</span>
+                  <h3 class="benefit-title">АВТОНОМНОСТЬ</h3>
+              </div>
+              <div class="benefit-desc">
+                  Система работает на вас 24/7, находя лучшие возможности.
+              </div>
+              <i data-lucide="zap" class="benefit-icon"></i>
+          </div>
+          <div class="benefit-item">
+              <div class="benefit-header">
+                  <span class="benefit-idx">/03</span>
+                  <h3 class="benefit-title">БЕЗОПАСНОСТЬ</h3>
+              </div>
+              <div class="benefit-desc">
+                  Проверенные контракты и юридическая чистота всех предложений.
+              </div>
+              <i data-lucide="shield-check" class="benefit-icon"></i>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="innovations" class="section section-tech">
+  <div class="tech-bg-text">SYSTEM</div>
+  <div class="container-fluid">
+      <div class="metrics-grid">
+          <div class="metric-box">
+              <span class="metric-val text-gradient" data-target="98">0</span>
+              <span class="metric-sym">%</span>
+              <p class="metric-label">Точность прогноза</p>
+          </div>
+          <div class="metric-box box-border">
+              <span class="metric-val text-gradient" data-target="2">0</span>
+              <span class="metric-sym">мин</span>
+              <p class="metric-label">Время старта</p>
+          </div>
+          <div class="metric-box">
+              <span class="metric-val text-gradient" data-target="15">0</span>
+              <span class="metric-sym">стран</span>
+              <p class="metric-label">Покрытие в ЕС</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section id="roadmap" class="section section-roadmap">
+  <div class="container">
+      <div class="section-head">
+          <span class="section-num">[ 05 ]</span>
+          <h2 class="section-title">SYSTEM <span class="outline">LOG</span></h2>
+      </div>
+
+      <div class="roadmap-wrapper">
+          <div class="roadmap-step done">
+              <div class="step-marker">
+                  <div class="step-dot"></div>
+                  <div class="step-line"></div>
+              </div>
+              <div class="step-content">
+                  <div class="step-meta">PHASE_01 /// INITIALIZATION</div>
+                  <h3 class="step-title">АУДИТ И ОЦИФРОВКА</h3>
+                  <p class="step-desc">
+                      Глубокий анализ профиля. Расчет рыночной стоимости. Определение слабых мест и точек роста.
+                  </p>
+              </div>
+          </div>
+
+          <div class="roadmap-step active">
+              <div class="step-marker">
+                  <div class="step-dot"></div>
+                  <div class="step-line"></div>
+              </div>
+              <div class="step-content">
+                  <div class="step-meta">PHASE_02 /// PROCESSING</div>
+                  <h3 class="step-title">СТРАТЕГИЯ И УПАКОВКА</h3>
+                  <p class="step-desc">
+                      Сборка резюме стандарта EU. Оптимизация LinkedIn. Подготовка скриптов для интервью.
+                  </p>
+                  <div class="step-badge">[ CURRENT PROCESS ]</div>
+              </div>
+          </div>
+
+          <div class="roadmap-step">
+              <div class="step-marker">
+                  <div class="step-dot"></div>
+                  <div class="step-line"></div>
+              </div>
+              <div class="step-content">
+                  <div class="step-meta">PHASE_03 /// PENDING</div>
+                  <h3 class="step-title">ВЫХОД НА РЫНОК</h3>
+                  <p class="step-desc">
+                      Агрессивный нетворкинг. Рассылка по базе рекрутеров. Первые технические скрининги.
+                  </p>
+              </div>
+          </div>
+
+          <div class="roadmap-step">
+              <div class="step-marker">
+                  <div class="step-dot"></div>
+                  </div>
+              <div class="step-content">
+                  <div class="step-meta">PHASE_04 /// TARGET</div>
+                  <h3 class="step-title">ОФФЕР И РЕЛОКАЦИЯ</h3>
+                  <p class="step-desc">
+                      Переговоры о зарплате (Salary Negotiation). Подписание контракта. Визовая поддержка.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
     </main>
 
     <footer class="footer">
-  <div class="container">
-    <p class="footer-desc">
-      Made with ✨ by
-      <a
-        class="footer-link"
-        href="https://goit.global/ua/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GoIT team
-      </a>
-    </p>
+  <div class="footer__top-border"></div>
+
+  <div class="container footer__container">
+      <div class="footer__grid">
+
+          <div class="footer__col">
+              <a href="/" class="footer__logo">VOLT-NET<span class="dot">.</span></a>
+              <p class="footer__slogan">
+                  Алгоритмический подход к росту доходов и карьеры.
+              </p>
+              <div class="footer__badges">
+                  <span class="badge">SECURE</span>
+                  <span class="badge">AI-DRIVEN</span>
+              </div>
+          </div>
+
+          <div class="footer__col">
+              <h3 class="footer__title">[ НАВИГАЦИЯ ]</h3>
+              <ul class="footer__list">
+                  <li><a href="#about">О платформе</a></li>
+                  <li><a href="#benefits">Преимущества</a></li>
+                  <li><a href="#innovations">Инновации</a></li>
+                  <li><a href="#blog">Блог</a></li>
+                  <li><a href="#contact">Личный кабинет</a></li>
+              </ul>
+          </div>
+
+          <div class="footer__col">
+              <h3 class="footer__title">[ INFO ]</h3>
+              <ul class="footer__list">
+                  <li><a href="privacy.html">Политика конфиденциальности</a></li>
+                  <li><a href="cookies.html">Cookie политика</a></li>
+                  <li><a href="terms.html">Условия использования</a></li>
+                  <li><a href="return.html">Политика возврата</a></li>
+                  <li><a href="disclaimer.html">Отказ от ответственности</a></li>
+                  <li><a href="personal-data-policy.html">Обработка данных</a></li>
+              </ul>
+          </div>
+
+          <div class="footer__col">
+              <h3 class="footer__title">[ КОНТАКТЫ ]</h3>
+              <ul class="footer__contacts">
+                  <li>
+                      <i data-lucide="map-pin"></i>
+                      <span>Via Montenapoleone, 12,<br>20121 Milano MI, Italy</span>
+                  </li>
+                  <li>
+                      <i data-lucide="mail"></i>
+                      <a href="mailto:support@volt-net.life">support@volt-net.life</a>
+                  </li>
+                  <li>
+                      <i data-lucide="phone"></i>
+                      <a href="tel:+390299887766">+39 02 9988 7766</a>
+                  </li>
+              </ul>
+              <div class="footer__note">
+                  * Предложение активно только в странах ЕС
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="footer__bottom">
+      <div class="container footer__bottom-inner">
+          <p>&copy; 2025 Volt-Net.life. All rights reserved.</p>
+          <p>Design by Volt AI</p>
+      </div>
   </div>
 </footer>
-
-
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
   </body>
 </html>
