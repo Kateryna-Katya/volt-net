@@ -1884,3 +1884,79 @@ ul { list-style: none; }
     border-radius: 0;
   }
 }
+/* ========================================================================
+   13. LEGAL PAGES (Privacy, Terms, etc.)
+   ======================================================================== */
+.section-legal {
+  min-height: 100vh;
+  padding-top: 150px;
+  /* Отступ от хедера */
+  padding-bottom: 100px;
+}
+
+.legal-content {
+  max-width: 800px;
+  /* Узкая колонка для удобного чтения */
+  margin: 0 auto;
+}
+
+.legal-title {
+  font-family: var(--f-main);
+  font-size: clamp(32px, 5vw, 60px);
+  line-height: 1.1;
+  font-weight: 700;
+  margin-bottom: 60px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--c-accent);
+}
+
+.legal-text {
+  font-family: var(--f-text);
+  color: #ccc;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.legal-text h2 {
+  font-family: var(--f-main);
+  color: #fff;
+  font-size: 20px;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.legal-text p {
+  margin-bottom: 20px;
+}
+
+.legal-text ul {
+  list-style: none;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  border-left: 1px solid var(--c-line);
+}
+
+.legal-text li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.legal-text li::before {
+  content: '> ';
+  color: var(--c-accent);
+  font-family: monospace;
+  margin-right: 10px;
+}
+
+/* Мобильная адаптация для текстовых страниц */
+@media (max-width: 768px) {
+  .section-legal {
+    padding-top: 120px;
+  }
+
+  .legal-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+  }
+}
