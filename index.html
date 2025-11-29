@@ -14,14 +14,12 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" crossorigin src="/volt-net/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/volt-net/assets/styles-B90f8DIA.css">
+    <link rel="stylesheet" crossorigin href="/volt-net/assets/styles-CN7a50bg.css">
   </head>
   <body class="page">
 
     <div class="grid-background"></div>
 
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
     <header class="header">
   <div class="header__inner">
 
@@ -36,7 +34,7 @@
               <a href="./#about" class="nav__link">МЕТОД</a>
               <a href="./#benefits" class="nav__link">ПРОФИТ</a>
               <a href="./#innovations" class="nav__link">ТЕХНОЛОГИИ</a>
-              <a href="./#faq" class="nav__link">FAQ</a>
+              <a href="./#roadmap" class="nav__link">Система</a>
           </nav>
       </div>
 
@@ -45,21 +43,21 @@
               [ НАЧАТЬ АПГРЕЙД ]
           </a>
 
-          <button class="burger-btn" aria-label="Menu">
-              <span></span>
-              <span></span>
-          </button>
+<button id="burger-btn" class="burger-btn" aria-label="Menu">
+    <span></span>
+    <span></span>
+</button>
       </div>
   </div>
 </header>
 
-<div class="mobile-menu">
+<div id="nav-menu" class="mobile-menu">
   <div class="mobile-menu__bg"></div> <nav class="mobile-nav">
       <a href="./#hero" class="mobile-link">ГЛАВНАЯ <span class="num">01</span></a>
       <a href="./#about" class="mobile-link">МЕТОД <span class="num">02</span></a>
       <a href="./#benefits" class="mobile-link">ПРОФИТ <span class="num">03</span></a>
       <a href="./#innovations" class="mobile-link">ТЕХНОЛОГИИ <span class="num">04</span></a>
-      <a href="./#faq" class="mobile-link">FAQ <span class="num">05</span></a>
+      <a href="./#roadmap" class="mobile-link">Система <span class="num">05</span></a>
       <a href="./#contact" class="mobile-link accent">СТАРТ <span class="num">06</span></a>
   </nav>
 
@@ -277,81 +275,7 @@
   </div>
 </section>
 
-<section class="faq" id="faq">
-    <div class="container container-fluid">
-        <div class="faq-wrapper">
 
-            <div class="faq-header">
-                <h2 class="section-title">ВОПРОСЫ <br>И <span class="text-primary">ОТВЕТЫ</span></h2>
-                <p class="faq-desc">
-                    Мы собрали самые популярные вопросы о платформе.
-                    Если вы не нашли ответ, свяжитесь с нашей поддержкой.
-                </p>
-                <a href="#contact" class="btn btn--outline">Задать вопрос</a>
-            </div>
-
-            <div class="faq-list">
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Нужен ли опыт в IT или финансах?</span>
-                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Нет, опыт не требуется. Платформа Omnic-Zune разработана так, чтобы быть интуитивно
-                                понятной. Пошаговая система обучения и автоматизированные инструменты позволяют начать
-                                работу уже через 2 минуты после регистрации.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Доступна ли платформа в моей стране?</span>
-                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>На данный момент наше предложение и полная поддержка активны для резидентов стран
-                                Европейского Союза (Франция, Германия, Италия и др.). Мы работаем в полном соответствии
-                                с законодательством ЕС (GDPR).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Насколько безопасны мои данные?</span>
-                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Безопасность — наш приоритет. Мы используем сквозное шифрование военного уровня и
-                                распределенную сеть серверов. Ваши данные никогда не передаются третьим лицам без вашего
-                                прямого согласия.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Сколько времени нужно уделять платформе?</span>
-                        <span class="faq-icon"><i class="fa-solid fa-plus"></i></span>
-                    </button>
-                    <div class="faq-answer">
-                        <div class="faq-answer-inner">
-                            <p>Алгоритмы работают в автоматическом режиме 24/7. Большинству наших пользователей
-                                достаточно заходить на платформу 1-2 раза в неделю для контроля показателей и
-                                корректировки стратегии.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
 
 <section class="contact" id="contact">
     <div class="container container-fluid">
@@ -452,7 +376,7 @@
       <div class="footer__grid">
 
           <div class="footer__col">
-              <a href="/" class="footer__logo">VOLT-NET<span class="dot">.</span></a>
+              <a href="./#hero" class="footer__logo">VOLT-NET<span class="dot">.</span></a>
               <p class="footer__slogan">
                   Алгоритмический подход к росту доходов и карьеры.
               </p>
@@ -468,7 +392,7 @@
                   <li><a href="#about">О платформе</a></li>
                   <li><a href="#benefits">Преимущества</a></li>
                   <li><a href="#innovations">Инновации</a></li>
-                  <li><a href="#blog">Блог</a></li>
+                  <li><a href="#roadmap">Система</a></li>
                   <li><a href="#contact">Личный кабинет</a></li>
               </ul>
           </div>
@@ -476,12 +400,12 @@
           <div class="footer__col">
               <h3 class="footer__title">[ INFO ]</h3>
               <ul class="footer__list">
-                  <li><a href="privacy.html">Политика конфиденциальности</a></li>
-                  <li><a href="cookies.html">Cookie политика</a></li>
-                  <li><a href="terms.html">Условия использования</a></li>
-                  <li><a href="return.html">Политика возврата</a></li>
-                  <li><a href="disclaimer.html">Отказ от ответственности</a></li>
-                  <li><a href="personal-data-policy.html">Обработка данных</a></li>
+                  <li><a href="./privacy.html">Политика конфиденциальности</a></li>
+                  <li><a href="./cookies.html">Cookie политика</a></li>
+                  <li><a href="./terms.html">Условия использования</a></li>
+                  <li><a href="./return.html">Политика возврата</a></li>
+                  <li><a href="./disclaimer.html">Отказ от ответственности</a></li>
+                  <li><a href="./personal-data-policy.html">Обработка данных</a></li>
               </ul>
           </div>
 
@@ -515,24 +439,30 @@
       </div>
   </div>
 </footer>
-    <div id="cookie-popup" class="cookie-popup">
-      <div class="cookie-body">
-        <div class="cookie-icon">
-          <i class="fa-solid fa-cookie-bite"></i>
-        </div>
-        <div class="cookie-text">
-          <h4>Мы используем cookies</h4>
-          <p>Это необходимо для анализа трафика и настройки безопасности. Подробнее в нашей <a href="cookies.html">Cookie
-              политике</a>.</p>
-        </div>
-      </div>
-      <div class="cookie-actions">
-        <button id="accept-cookies" class="cookie-btn primary">Принять</button>
-        <button id="decline-cookies" class="cookie-btn outline">Закрыть</button>
-      </div>
-    </div>
-        </div>
-    </div>
+
+ 
+<div id="cookie-hud" class="cookie-hud">
+  <div class="hud-scanner"></div>
+
+  <div class="hud-header">
+    <span class="hud-dot"></span>
+    <span class="hud-title">SYSTEM_NOTICE // COOKIES</span>
+    <span class="hud-id">ID: CK-24</span>
+  </div>
+
+  <div class="hud-content">
+    <p>
+      Платформа использует файлы cookies для оптимизации нейросети и улучшения UX.
+      Продолжая, вы принимаете <a href="cookies.html">протокол безопасности</a>.
+    </p>
+  </div>
+
+  <div class="hud-actions">
+    <button id="hud-accept" class="hud-btn primary">[ ПРИНЯТЬ ]</button>
+    <button id="hud-decline" class="hud-btn secondary">ОТКЛОНИТЬ</button>
+  </div>
+</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
