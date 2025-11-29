@@ -1892,6 +1892,8 @@ ul { list-style: none; }
   padding-top: 150px;
   /* Отступ от хедера */
   padding-bottom: 100px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .legal-content {
