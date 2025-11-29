@@ -1619,22 +1619,17 @@ ul { list-style: none; }
   right: 30px;
   width: 380px;
   background: rgba(14, 14, 16, 0.9);
-  /* Темный фон */
   backdrop-filter: blur(12px);
-  /* Эффект стекла */
   border: 1px solid var(--border-color);
   border-left: 3px solid var(--primary);
-  /* Лаймовый акцент слева */
   padding: 24px;
   border-radius: 8px;
   z-index: 9999;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-
-  /* Скрыт по умолчанию (для анимации) */
   opacity: 0;
   transform: translateY(20px);
   visibility: hidden;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all .5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cookie-popup.show {
@@ -1652,7 +1647,6 @@ ul { list-style: none; }
 .cookie-icon {
   font-size: 1.5rem;
   color: var(--primary);
-  padding-top: 5px;
 }
 
 .cookie-text h4 {
@@ -1665,11 +1659,6 @@ ul { list-style: none; }
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.4;
-}
-
-.cookie-text a {
-  color: var(--text-main);
-  text-decoration: underline;
 }
 
 .cookie-actions {
@@ -1686,16 +1675,11 @@ ul { list-style: none; }
   border-radius: 4px;
   border: 1px solid transparent;
   transition: all 0.3s ease;
-  font-family: var(--font-body);
 }
 
 .cookie-btn.primary {
   background: var(--primary);
   color: #000;
-}
-
-.cookie-btn.primary:hover {
-  background: #fff;
 }
 
 .cookie-btn.outline {
@@ -1704,12 +1688,6 @@ ul { list-style: none; }
   color: var(--text-muted);
 }
 
-.cookie-btn.outline:hover {
-  border-color: var(--text-main);
-  color: var(--text-main);
-}
-
-/* Мобильная версия */
 @media (max-width: 576px) {
   .cookie-popup {
     bottom: 0;
@@ -1719,5 +1697,190 @@ ul { list-style: none; }
     border-radius: 12px 12px 0 0;
     border-left: none;
     border-top: 3px solid var(--primary);
+  }
+}
+/* --- FIX: Скрытие элементов для анимации (чтобы не мигали) --- */
+.info-card,
+.blog-card,
+.parallax-item,
+.accordion__item,
+.faq-item {
+  opacity: 0;
+  transform: translateY(30px);
+  /* Начальный сдвиг вниз */
+  visibility: hidden;
+  /* Чтобы не перекрывали клики, пока не появятся */
+}
+
+/* Разделители тоже скроем */
+.divider {
+  opacity: 0;
+  transform: scaleX(0);
+}
+/* --- Cookie HUD: Cyberpunk Style --- */
+.cookie-hud {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 360px;
+  background: rgba(10, 10, 12, 0.95);
+  /* Почти черный */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  /* Техно-шрифт */
+
+  /* Скрыто по умолчанию */
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  visibility: hidden;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* Скошенный угол */
+  clip-path: polygon(0 0,
+      100% 0,
+      100% calc(100% - 15px),
+      calc(100% - 15px) 100%,
+      0 100%);
+}
+
+/* Состояние появления */
+.cookie-hud.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  visibility: visible;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Линия сканера (анимация сверху) */
+.hud-scanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary);
+  transition: width 1s ease;
+}
+
+.cookie-hud.active .hud-scanner {
+  width: 100%;
+  transition-delay: 0.2s;
+}
+
+/* Заголовок */
+.hud-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.hud-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--primary);
+  animation: hudPulse 2s infinite;
+}
+
+@keyframes hudPulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.hud-title {
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.hud-id {
+  margin-left: auto;
+  color: #555;
+  font-size: 0.7rem;
+}
+
+/* Текст */
+.hud-content p {
+  font-size: 0.8rem;
+  color: #ccc;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.hud-content a {
+  color: #fff;
+  text-decoration: underline;
+  text-decoration-color: var(--primary);
+}
+
+/* Кнопки */
+.hud-actions {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 10px;
+}
+
+.hud-btn {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+
+.hud-btn.primary {
+  background: rgba(212, 255, 0, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.hud-btn.primary:hover {
+  background: var(--primary);
+  color: #000;
+  box-shadow: 0 0 15px rgba(212, 255, 0, 0.3);
+}
+
+.hud-btn.secondary {
+  background: transparent;
+  color: #666;
+  border: 1px solid #333;
+}
+
+.hud-btn.secondary:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .cookie-hud {
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    clip-path: none;
+    border-top: 1px solid var(--primary);
+    border-radius: 0;
   }
 }

@@ -248,39 +248,38 @@ if (roadmapSteps.length > 0) {
             }
         });
     });
-// =================================================================
-    // COOKIE POPUP LOGIC
-    // =================================================================
+// ==============================================
+    // CYBER-HUD COOKIE LOGIC
+    // ==============================================
     
-    const cookiePopup = document.getElementById('cookie-popup');
-    const acceptBtn = document.getElementById('accept-cookies');
-    const declineBtn = document.getElementById('decline-cookies');
+    const hud = document.getElementById('cookie-hud');
+    const hudAccept = document.getElementById('hud-accept');
+    const hudDecline = document.getElementById('hud-decline');
 
-    // 1. Проверяем, соглашался ли пользователь ранее
-    // Если в localStorage нет записи 'cookieConsent', значит пользователь тут впервые (или очистил кэш)
-    if (cookiePopup && !localStorage.getItem('cookieConsent')) {
-        // Показываем попап с задержкой 2 секунды, чтобы не пугать сразу
+    // Функция показа (через 2 секунды)
+    if (hud && !localStorage.getItem('cookieConsent')) {
         setTimeout(() => {
-            cookiePopup.classList.add('show');
+            hud.classList.add('active');
         }, 2000);
     }
 
-    // 2. Логика кнопки "Принять"
-    if (acceptBtn) {
-        acceptBtn.addEventListener('click', () => {
-            // Сохраняем в браузере метку, что пользователь согласился
+    // Принять
+    if (hudAccept) {
+        hudAccept.addEventListener('click', () => {
             localStorage.setItem('cookieConsent', 'true');
-            // Убираем класс .show, чтобы скрыть окно
-            cookiePopup.classList.remove('show');
+            // Эффект выключения: сначала прозрачность, потом удаление
+            hud.style.opacity = '0';
+            hud.style.transform = 'translateY(10px)';
+            setTimeout(() => {
+                hud.classList.remove('active');
+            }, 500);
         });
     }
 
-    // 3. Логика кнопки "Закрыть" (Decline)
-    if (declineBtn) {
-        declineBtn.addEventListener('click', () => {
-            // Просто скрываем окно для этой сессии
-            // (Можно не сохранять отказ, чтобы спросить снова в следующий раз, или сохранить 'false')
-            cookiePopup.classList.remove('show');
+    // Отклонить
+    if (hudDecline) {
+        hudDecline.addEventListener('click', () => {
+            hud.classList.remove('active');
         });
     }
 

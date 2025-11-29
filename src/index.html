@@ -19,8 +19,6 @@
 
     <div class="grid-background"></div>
 
-    <div id="smooth-wrapper">
-        <div id="smooth-content">
     <load src="./partials/header.html" />
 
     <main class="main">
@@ -30,24 +28,30 @@
     </main>
 
     <load src="./partials/footer.html" />
-    <div id="cookie-popup" class="cookie-popup">
-      <div class="cookie-body">
-        <div class="cookie-icon">
-          <i class="fa-solid fa-cookie-bite"></i>
-        </div>
-        <div class="cookie-text">
-          <h4>Мы используем cookies</h4>
-          <p>Это необходимо для анализа трафика и настройки безопасности. Подробнее в нашей <a href="cookies.html">Cookie
-              политике</a>.</p>
-        </div>
-      </div>
-      <div class="cookie-actions">
-        <button id="accept-cookies" class="cookie-btn primary">Принять</button>
-        <button id="decline-cookies" class="cookie-btn outline">Закрыть</button>
-      </div>
-    </div>
-        </div>
-    </div>
+
+ 
+<div id="cookie-hud" class="cookie-hud">
+  <div class="hud-scanner"></div>
+
+  <div class="hud-header">
+    <span class="hud-dot"></span>
+    <span class="hud-title">SYSTEM_NOTICE // COOKIES</span>
+    <span class="hud-id">ID: CK-24</span>
+  </div>
+
+  <div class="hud-content">
+    <p>
+      Платформа использует файлы cookies для оптимизации нейросети и улучшения UX.
+      Продолжая, вы принимаете <a href="cookies.html">протокол безопасности</a>.
+    </p>
+  </div>
+
+  <div class="hud-actions">
+    <button id="hud-accept" class="hud-btn primary">[ ПРИНЯТЬ ]</button>
+    <button id="hud-decline" class="hud-btn secondary">ОТКЛОНИТЬ</button>
+  </div>
+</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
